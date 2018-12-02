@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoQuarterTBC", "NoQuarterTBC\NoQuarterTBC.csproj", "{84B15832-614E-489C-BE1C-270B6A07A533}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84B15832-614E-489C-BE1C-270B6A07A533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B15832-614E-489C-BE1C-270B6A07A533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84B15832-614E-489C-BE1C-270B6A07A533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84B15832-614E-489C-BE1C-270B6A07A533}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C18A0360-5511-4CBF-A4DE-97D3DB32FA70}
+	EndGlobalSection
+EndGlobal
