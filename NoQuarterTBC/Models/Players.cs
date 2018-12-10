@@ -47,7 +47,7 @@ namespace NoQuarterTBC.Models
         public virtual Roles roles { get; set; }
 
         // Link to the Classes Table
-        [Required(ErrorMessage = "Assay Type ID is required.")]
+        [Required(ErrorMessage = "Class ID is required.")]
         [DisplayName("Class ID")]
         [ForeignKey("classes")]
         public int AssayTypeID { get; set; }
