@@ -16,7 +16,6 @@ namespace NoQuarterTBC.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("Player ID")]
         public int PlayerID { get; set; }
-        /*  The Links below are all of the tables that are linked to the primary key of the player table (PlayerID) */
         #region Links
         // Link back to the Notes Table
         public virtual ICollection<Notes> notes { get; set; }
