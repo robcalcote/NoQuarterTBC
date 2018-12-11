@@ -151,10 +151,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Attunements.cs" />
+    <Compile Include="Models\BankContributions.cs" />
+    <Compile Include="Models\Bosses.cs" />
     <Compile Include="Models\Classes.cs" />
+    <Compile Include="Models\EncounterLoots.cs" />
+    <Compile Include="Models\Encounters.cs" />
     <Compile Include="Models\GameRoles.cs" />
+    <Compile Include="Models\GuildRanks.cs" />
+    <Compile Include="Models\Loots.cs" />
     <Compile Include="Models\Notes.cs" />
+    <Compile Include="Models\PlayerAttunements.cs" />
+    <Compile Include="Models\PlayerProfessions.cs" />
     <Compile Include="Models\Players.cs" />
+    <Compile Include="Models\Professions.cs" />
+    <Compile Include="Models\Promotions.cs" />
+    <Compile Include="Models\RaidAttendance.cs" />
+    <Compile Include="Models\RaidInstances.cs" />
+    <Compile Include="Models\Raids.cs" />
+    <Compile Include="Models\Rights.cs" />
+    <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Specs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
