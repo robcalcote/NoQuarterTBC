@@ -21,14 +21,14 @@ namespace NoQuarterTBC.Models
         [Required(ErrorMessage = "A Player ID is required.")]
         [DisplayName("Player ID")]
         [ForeignKey("players")]
-        public int PlayerID { get; set; }
+        public int? PlayerID { get; set; }
         public virtual Player players { get; set; }
 
         // Link to the RaidInstances Table
         [Required(ErrorMessage = "A Raid Instance ID is required.")]
         [DisplayName("Raid Instance ID")]
         [ForeignKey("raidinstances")]
-        public int RaidInstanceID { get; set; }
+        public int? RaidInstanceID { get; set; }
         public virtual RaidInstance raidinstances { get; set; }
 
         [Required(ErrorMessage = "Total Attendance Count is required.")]

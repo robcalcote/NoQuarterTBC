@@ -21,7 +21,7 @@ namespace NoQuarterTBC.Models
         [Required(ErrorMessage = "Role ID is required.")]
         [DisplayName("Role ID")]
         [ForeignKey("roles")]
-        public int RoleID { get; set; }
+        public int? RoleID { get; set; }
         public virtual Role roles { get; set; }
 
         [Required(ErrorMessage = "A Rights Name is required.")]

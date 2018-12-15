@@ -6,8 +6,6 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using NoQuarterTBC.Models;
-using NoQuarterTBC.DAL;
-using System.Data.Entity;
 
 namespace NoQuarterTBC
 {
@@ -15,8 +13,6 @@ namespace NoQuarterTBC
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<NoQuarterTBCContext>(null);
-
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

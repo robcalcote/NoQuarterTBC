@@ -29,12 +29,12 @@ namespace NoQuarterTBC.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note notes = db.Note.Find(id);
-            if (notes == null)
+            Note note = db.Note.Find(id);
+            if (note == null)
             {
                 return HttpNotFound();
             }
-            return View(notes);
+            return View(note);
         }
 
         // GET: Notes/Create
@@ -49,17 +49,17 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NotesID,PlayerID,Note,NoteDate,PrivateNote")] Note notes)
+        public ActionResult Create([Bind(Include = "NotesID,PlayerID,NoteName,NoteDate,PrivateNote")] Note note)
         {
             if (ModelState.IsValid)
             {
-                db.Note.Add(notes);
+                db.Note.Add(note);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", notes.PlayerID);
-            return View(notes);
+            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
+            return View(note);
         }
 
         // GET: Notes/Edit/5
@@ -69,13 +69,13 @@ namespace NoQuarterTBC.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note notes = db.Note.Find(id);
-            if (notes == null)
+            Note note = db.Note.Find(id);
+            if (note == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", notes.PlayerID);
-            return View(notes);
+            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
+            return View(note);
         }
 
         // POST: Notes/Edit/5
@@ -83,16 +83,16 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NotesID,PlayerID,Note,NoteDate,PrivateNote")] Note notes)
+        public ActionResult Edit([Bind(Include = "NotesID,PlayerID,NoteName,NoteDate,PrivateNote")] Note note)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(notes).State = EntityState.Modified;
+                db.Entry(note).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", notes.PlayerID);
-            return View(notes);
+            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
+            return View(note);
         }
 
         // GET: Notes/Delete/5
@@ -102,12 +102,12 @@ namespace NoQuarterTBC.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note notes = db.Note.Find(id);
-            if (notes == null)
+            Note note = db.Note.Find(id);
+            if (note == null)
             {
                 return HttpNotFound();
             }
-            return View(notes);
+            return View(note);
         }
 
         // POST: Notes/Delete/5
@@ -115,8 +115,8 @@ namespace NoQuarterTBC.Controllers.Admin
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Note notes = db.Note.Find(id);
-            db.Note.Remove(notes);
+            Note note = db.Note.Find(id);
+            db.Note.Remove(note);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

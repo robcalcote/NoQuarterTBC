@@ -32,7 +32,7 @@ namespace NoQuarterTBC.Models
         [Required(ErrorMessage = "A Raid ID is required.")]
         [DisplayName("Raid ID")]
         [ForeignKey("raids")]
-        public int RaidID { get; set; }
+        public int? RaidID { get; set; }
         public virtual Raid raids { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Attunement ID")]
         [ForeignKey("attunements")]
-        public int AttunementID { get; set; }
+        public int? AttunementID { get; set; }
         public virtual Attunement attunements { get; set; }
 
         // Link to the Players Table
@@ -26,7 +26,7 @@ namespace NoQuarterTBC.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Player ID")]
         [ForeignKey("players")]
-        public int PlayerID { get; set; }
+        public int? PlayerID { get; set; }
         public virtual Player players { get; set; }
 
         [Required(ErrorMessage = "An Achieved Date is required.")]

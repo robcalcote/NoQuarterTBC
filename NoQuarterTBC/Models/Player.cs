@@ -42,21 +42,21 @@ namespace NoQuarterTBC.Models
         [Required(ErrorMessage = "Role ID is required.")]
         [DisplayName("Role ID")]
         [ForeignKey("roles")]
-        public int RoleID { get; set; }
+        public int? RoleID { get; set; }
         public virtual Role roles { get; set; }
 
         // Link to the Classes Table
         [Required(ErrorMessage = "Class ID is required.")]
         [DisplayName("Class ID")]
         [ForeignKey("classes")]
-        public int AssayTypeID { get; set; }
+        public int? AssayTypeID { get; set; }
         public virtual Class classes { get; set; }
 
         // Link to the Specs Table
         [Required(ErrorMessage = "Spec ID is required.")]
         [DisplayName("Spec ID")]
         [ForeignKey("specs")]
-        public int SpecID { get; set; }
+        public int? SpecID { get; set; }
         public virtual Spec specs { get; set; }
 
         [Required(ErrorMessage = "Login Password is required.")]

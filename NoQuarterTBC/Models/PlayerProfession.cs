@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Profession ID")]
         [ForeignKey("professions")]
-        public int ProfessionID { get; set; }
+        public int? ProfessionID { get; set; }
         public virtual Profession professions { get; set; }
 
         // Link to the Players Table
@@ -26,7 +26,7 @@ namespace NoQuarterTBC.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Player ID")]
         [ForeignKey("players")]
-        public int PlayerID { get; set; }
+        public int? PlayerID { get; set; }
         public virtual Player players { get; set; }
     }
 }

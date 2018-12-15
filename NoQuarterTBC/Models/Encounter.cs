@@ -25,7 +25,7 @@ namespace NoQuarterTBC.Models
         [Required(ErrorMessage = "A Boss ID is required.")]
         [DisplayName("Boss ID")]
         [ForeignKey("bosses")]
-        public int BossID { get; set; }
+        public int? BossID { get; set; }
         public virtual Boss bosses { get; set; }
 
         [Required(ErrorMessage = "Boss First Kill is required.")]

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using NoQuarterTBC.DAL;
 using NoQuarterTBC.Models;
 
-namespace NoQuarterTBC.Controllers.Admin
+namespace NoQuarterTBC.Controllers
 {
     public class PlayersController : Controller
     {
@@ -29,12 +29,12 @@ namespace NoQuarterTBC.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player players = db.Player.Find(id);
-            if (players == null)
+            Player player = db.Player.Find(id);
+            if (player == null)
             {
                 return HttpNotFound();
             }
-            return View(players);
+            return View(player);
         }
 
         // GET: Players/Create
@@ -51,19 +51,19 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlayerID,PlayerName,RoleID,AssayTypeID,SpecID,LoginPW")] Player players)
+        public ActionResult Create([Bind(Include = "PlayerID,PlayerName,RoleID,AssayTypeID,SpecID,LoginPW")] Player player)
         {
             if (ModelState.IsValid)
             {
-                db.Player.Add(players);
+                db.Player.Add(player);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", players.AssayTypeID);
-            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", players.RoleID);
-            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", players.SpecID);
-            return View(players);
+            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", player.AssayTypeID);
+            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
+            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
+            return View(player);
         }
 
         // GET: Players/Edit/5
@@ -73,15 +73,15 @@ namespace NoQuarterTBC.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player players = db.Player.Find(id);
-            if (players == null)
+            Player player = db.Player.Find(id);
+            if (player == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", players.AssayTypeID);
-            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", players.RoleID);
-            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", players.SpecID);
-            return View(players);
+            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", player.AssayTypeID);
+            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
+            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
+            return View(player);
         }
 
         // POST: Players/Edit/5
@@ -89,18 +89,18 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlayerID,PlayerName,RoleID,AssayTypeID,SpecID,LoginPW")] Player players)
+        public ActionResult Edit([Bind(Include = "PlayerID,PlayerName,RoleID,AssayTypeID,SpecID,LoginPW")] Player player)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(players).State = EntityState.Modified;
+                db.Entry(player).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", players.AssayTypeID);
-            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", players.RoleID);
-            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", players.SpecID);
-            return View(players);
+            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", player.AssayTypeID);
+            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
+            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
+            return View(player);
         }
 
         // GET: Players/Delete/5
@@ -110,12 +110,12 @@ namespace NoQuarterTBC.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player players = db.Player.Find(id);
-            if (players == null)
+            Player player = db.Player.Find(id);
+            if (player == null)
             {
                 return HttpNotFound();
             }
-            return View(players);
+            return View(player);
         }
 
         // POST: Players/Delete/5
@@ -123,8 +123,8 @@ namespace NoQuarterTBC.Controllers.Admin
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Player players = db.Player.Find(id);
-            db.Player.Remove(players);
+            Player player = db.Player.Find(id);
+            db.Player.Remove(player);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
