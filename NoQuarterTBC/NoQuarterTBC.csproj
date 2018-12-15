@@ -153,32 +153,34 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\NotesController.cs" />
+    <Compile Include="Controllers\Admin\PlayersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\NoQuarterTBCContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Attunements.cs" />
-    <Compile Include="Models\BankContributions.cs" />
-    <Compile Include="Models\Bosses.cs" />
-    <Compile Include="Models\Classes.cs" />
-    <Compile Include="Models\EncounterLoots.cs" />
-    <Compile Include="Models\Encounters.cs" />
-    <Compile Include="Models\GameRoles.cs" />
-    <Compile Include="Models\GuildRanks.cs" />
-    <Compile Include="Models\Loots.cs" />
-    <Compile Include="Models\Notes.cs" />
-    <Compile Include="Models\PlayerAttunements.cs" />
-    <Compile Include="Models\PlayerProfessions.cs" />
-    <Compile Include="Models\Players.cs" />
-    <Compile Include="Models\Professions.cs" />
-    <Compile Include="Models\Promotions.cs" />
+    <Compile Include="Models\Attunement.cs" />
+    <Compile Include="Models\BankContribution.cs" />
+    <Compile Include="Models\Boss.cs" />
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\EncounterLoot.cs" />
+    <Compile Include="Models\Encounter.cs" />
+    <Compile Include="Models\GameRole.cs" />
+    <Compile Include="Models\GuildRank.cs" />
+    <Compile Include="Models\Loot.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\PlayerAttunement.cs" />
+    <Compile Include="Models\PlayerProfession.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Profession.cs" />
+    <Compile Include="Models\Promotion.cs" />
     <Compile Include="Models\RaidAttendance.cs" />
-    <Compile Include="Models\RaidInstances.cs" />
-    <Compile Include="Models\Raids.cs" />
-    <Compile Include="Models\Rights.cs" />
-    <Compile Include="Models\Roles.cs" />
-    <Compile Include="Models\Specs.cs" />
+    <Compile Include="Models\RaidInstance.cs" />
+    <Compile Include="Models\Raid.cs" />
+    <Compile Include="Models\Privilege.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Spec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -220,10 +222,19 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Notes\Create.cshtml" />
+    <Content Include="Views\Notes\Delete.cshtml" />
+    <Content Include="Views\Notes\Details.cshtml" />
+    <Content Include="Views\Notes\Edit.cshtml" />
+    <Content Include="Views\Notes\Index.cshtml" />
+    <Content Include="Views\Players\Create.cshtml" />
+    <Content Include="Views\Players\Delete.cshtml" />
+    <Content Include="Views\Players\Details.cshtml" />
+    <Content Include="Views\Players\Edit.cshtml" />
+    <Content Include="Views\Players\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Rights Table
     [Table("Rights")]
-    public class Rights
+    public class Privilege
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -22,7 +22,7 @@ namespace NoQuarterTBC.Models
         [DisplayName("Role ID")]
         [ForeignKey("roles")]
         public int RoleID { get; set; }
-        public virtual Roles roles { get; set; }
+        public virtual Role roles { get; set; }
 
         [Required(ErrorMessage = "A Rights Name is required.")]
         [StringLength(30, ErrorMessage = "Rights Name must not exceed 30 characters.")]

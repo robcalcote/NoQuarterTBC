@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // BankContributions Table
     [Table("BankContributions")]
-    public class BankContributions
+    public class BankContribution
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -22,7 +22,7 @@ namespace NoQuarterTBC.Models
         [DisplayName("Player ID")]
         [ForeignKey("players")]
         public int PlayerID { get; set; }
-        public virtual Players players { get; set; }
+        public virtual Player players { get; set; }
 
         [Required(ErrorMessage = "An Item Name is required.")]
         [StringLength(30, ErrorMessage = "Item Name must not exceed 30 characters.")]

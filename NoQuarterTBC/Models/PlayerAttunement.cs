@@ -11,7 +11,7 @@ namespace NoQuarterTBC.Models
     // PlayerAttunements Table
     // Linking Table for Players and Attunements
     [Table("PlayerAttunements")]
-    public class PlayerAttunements
+    public class PlayerAttunement
     {
         // Link to the Attunements Table
         [Key, Required, Column(Order = 2)]
@@ -19,7 +19,7 @@ namespace NoQuarterTBC.Models
         [DisplayName("Attunement ID")]
         [ForeignKey("attunements")]
         public int AttunementID { get; set; }
-        public virtual Attunements attunements { get; set; }
+        public virtual Attunement attunements { get; set; }
 
         // Link to the Players Table
         [Key, Required, Column(Order = 1)]
@@ -27,7 +27,7 @@ namespace NoQuarterTBC.Models
         [DisplayName("Player ID")]
         [ForeignKey("players")]
         public int PlayerID { get; set; }
-        public virtual Players players { get; set; }
+        public virtual Player players { get; set; }
 
         [Required(ErrorMessage = "An Achieved Date is required.")]
         [DisplayName("Date Achieved")]

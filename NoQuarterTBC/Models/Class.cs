@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Classes Table
     [Table("Classes")]
-    public class Classes
+    public class Class
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,9 +18,9 @@ namespace NoQuarterTBC.Models
         public int ClassID { get; set; }
         #region Links
         // Link back to the Players Table
-        public virtual ICollection<Players> players { get; set; }
+        public virtual ICollection<Player> players { get; set; }
         // Link back to the Specs Table
-        public virtual ICollection<Specs> specs { get; set; }
+        public virtual ICollection<Spec> specs { get; set; }
         #endregion
         
         [Required(ErrorMessage = "A Class Name is required.")]

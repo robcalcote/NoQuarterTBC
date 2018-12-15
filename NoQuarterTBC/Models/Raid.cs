@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Raids Table
     [Table("Raids")]
-    public class Raids
+    public class Raid
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,9 +18,9 @@ namespace NoQuarterTBC.Models
         public int RaidID { get; set; }
         #region Links
         // Link back to the RaidAttendance Table
-        public virtual ICollection<RaidInstances> raidinstances { get; set; }
+        public virtual ICollection<RaidInstance> raidinstances { get; set; }
         // Link back to the Bosses Table
-        public virtual ICollection<Bosses> bosses { get; set; }
+        public virtual ICollection<Boss> bosses { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Raid Name is required.")]

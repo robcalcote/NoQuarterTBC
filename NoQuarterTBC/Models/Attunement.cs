@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Attunements Table
     [Table("Attunements")]
-    public class Attunements
+    public class Attunement
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         public int AttuneID { get; set; }
         #region Links
         // Link back to the PlayerProfessions Table
-        public virtual ICollection<PlayerAttunements> playerattunements { get; set; }
+        public virtual ICollection<PlayerAttunement> playerattunements { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Attunement Name is required.")]

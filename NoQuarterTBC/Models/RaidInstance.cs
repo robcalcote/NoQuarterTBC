@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // RaidInstances Table
     [Table("RaidInstances")]
-    public class RaidInstances
+    public class RaidInstance
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -26,7 +26,7 @@ namespace NoQuarterTBC.Models
         [DisplayName("Raid ID")]
         [ForeignKey("raids")]
         public int RaidID { get; set; }
-        public virtual Raids raids { get; set; }
+        public virtual Raid raids { get; set; }
 
         [Required(ErrorMessage = "A Raid Date is required.")]
         [DisplayName("Raid Date")]

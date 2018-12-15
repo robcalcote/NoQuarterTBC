@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // GameRoles Table
     [Table("GameRoles")]
-    public class GameRoles
+    public class GameRole
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         public int GameRoleID { get; set; }
         #region Links
         // Link back to the Specs Table
-        public virtual ICollection<Specs> specs { get; set; }
+        public virtual ICollection<Spec> specs { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Game Role Name is required.")]

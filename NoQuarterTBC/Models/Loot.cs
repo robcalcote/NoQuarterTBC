@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Loots Table
     [Table("Loots")]
-    public class Loots
+    public class Loot
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         public int LootID { get; set; }
         #region Links
         // Link back to the EncounterLoots Table
-        public virtual ICollection<EncounterLoots> encounterloots { get; set; }
+        public virtual ICollection<EncounterLoot> encounterloots { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Loot Name is required.")]
@@ -31,6 +31,6 @@ namespace NoQuarterTBC.Models
         [DisplayName("Boss ID")]
         [ForeignKey("bosses")]
         public int BossID { get; set; }
-        public virtual Bosses bosses { get; set; }
+        public virtual Boss bosses { get; set; }
     }
 }

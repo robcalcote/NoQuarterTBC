@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // GuildRanks Table
     [Table("GuildRanks")]
-    public class GuildRanks
+    public class GuildRank
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         public int RankID { get; set; }
         #region Links
         // Link back to the Promotions Table
-        public virtual ICollection<Promotions> promotions { get; set; }
+        public virtual ICollection<Promotion> promotions { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Guild Rank Name is required.")]

@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Notes Table
     [Table("Notes")]
-    public class Notes
+    public class Note
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -22,11 +22,11 @@ namespace NoQuarterTBC.Models
         [DisplayName("Player ID")]
         [ForeignKey("players")]
         public int PlayerID { get; set; }
-        public virtual Players players { get; set; }
+        public virtual Player players { get; set; }
 
         [Required(ErrorMessage = "A Note is required.")]
         [DisplayName("Note")]
-        public string Note { get; set; }
+        public string NoteName { get; set; }
 
         [Required(ErrorMessage = "A Note Date is required.")]
         [DisplayName("Note Date")]

@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Specs Table
     [Table("Specs")]
-    public class Specs
+    public class Spec
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         public int SpecID { get; set; }
         #region Links
         // Link back to the Players Table
-        public virtual ICollection<Players> players { get; set; }
+        public virtual ICollection<Player> players { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Spec Name is required.")]
@@ -31,13 +31,13 @@ namespace NoQuarterTBC.Models
         [DisplayName("Game Role ID")]
         [ForeignKey("gameroles")]
         public int GameRoleID { get; set; }
-        public virtual GameRoles gameroles { get; set; }
+        public virtual GameRole gameroles { get; set; }
 
         // Link to the Classes Table
         [Required(ErrorMessage = "Class ID is required.")]
         [DisplayName("Class ID")]
         [ForeignKey("classes")]
         public int ClassID { get; set; }
-        public virtual Classes classes { get; set; }
+        public virtual Class classes { get; set; }
     }
 }

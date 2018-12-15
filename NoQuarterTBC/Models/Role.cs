@@ -10,17 +10,15 @@ namespace NoQuarterTBC.Models
 {
     // Roles Table
     [Table("Roles")]
-    public class Roles
+    public class Role
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("Role ID")]
         public int RoleID { get; set; }
         #region Links
-        // Link back to the Notes Table
-        public virtual ICollection<Notes> notes { get; set; }
         // Link back to the Rights Table
-        public virtual Rights rights { get; set; }
+        public virtual ICollection<Privilege> rights { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Role Name is required.")]

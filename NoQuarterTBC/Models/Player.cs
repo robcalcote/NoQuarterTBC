@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Players Table
     [Table("Players")]
-    public class Players
+    public class Player
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,19 +18,19 @@ namespace NoQuarterTBC.Models
         public int PlayerID { get; set; }
         #region Links
         // Link back to the Notes Table
-        public virtual ICollection<Notes> notes { get; set; }
+        public virtual ICollection<Note> notes { get; set; }
         // Link back to the PlayerProfessions Table
-        public virtual ICollection<PlayerProfessions> playerprofessions { get; set; }
+        public virtual ICollection<PlayerProfession> playerprofessions { get; set; }
         // Link back to the PlayerAttunements Table
-        public virtual ICollection<PlayerAttunements> playerattunements { get; set; }
+        public virtual ICollection<PlayerAttunement> playerattunements { get; set; }
         // Link back to the BankContributions Table
-        public virtual ICollection<BankContributions> bankcontributions { get; set; }
+        public virtual ICollection<BankContribution> bankcontributions { get; set; }
         // Link back to the Promotions Table
-        public virtual ICollection<Promotions> promotions { get; set; }
+        public virtual ICollection<Promotion> promotions { get; set; }
         // Link back to the RaidAttendance Table
         public virtual ICollection<RaidAttendance> raidattendance { get; set; }
         // Link back to the EncounterLoots Table
-        public virtual ICollection<EncounterLoots> encounterloots { get; set; }
+        public virtual ICollection<EncounterLoot> encounterloots { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Player Name is required.")]
@@ -43,21 +43,21 @@ namespace NoQuarterTBC.Models
         [DisplayName("Role ID")]
         [ForeignKey("roles")]
         public int RoleID { get; set; }
-        public virtual Roles roles { get; set; }
+        public virtual Role roles { get; set; }
 
         // Link to the Classes Table
         [Required(ErrorMessage = "Class ID is required.")]
         [DisplayName("Class ID")]
         [ForeignKey("classes")]
         public int AssayTypeID { get; set; }
-        public virtual Classes classes { get; set; }
+        public virtual Class classes { get; set; }
 
         // Link to the Specs Table
         [Required(ErrorMessage = "Spec ID is required.")]
         [DisplayName("Spec ID")]
         [ForeignKey("specs")]
         public int SpecID { get; set; }
-        public virtual Specs specs { get; set; }
+        public virtual Spec specs { get; set; }
 
         [Required(ErrorMessage = "Login Password is required.")]
         [DisplayName("Login Password")]

@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Professions Table
     [Table("Professions")]
-    public class Professions
+    public class Profession
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         public int ProfessionID { get; set; }
         #region Links
         // Link back to the PlayerProfessions Table
-        public virtual ICollection<PlayerProfessions> playerprofessions { get; set; }
+        public virtual ICollection<PlayerProfession> playerprofessions { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Profession Name is required.")]

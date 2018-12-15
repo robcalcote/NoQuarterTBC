@@ -10,7 +10,7 @@ namespace NoQuarterTBC.Models
 {
     // Bosses Table
     [Table("Bosses")]
-    public class Bosses
+    public class Boss
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,9 +18,9 @@ namespace NoQuarterTBC.Models
         public int BossID { get; set; }
         #region Links
         // Link back to the Encounters Table
-        public virtual ICollection<Encounters> encounters { get; set; }
+        public virtual ICollection<Encounter> encounters { get; set; }
         // Link back to the Loots Table
-        public virtual ICollection<Loots> loots { get; set; }
+        public virtual ICollection<Loot> loots { get; set; }
         #endregion
 
         [Required(ErrorMessage = "A Boss Name is required.")]
@@ -33,6 +33,6 @@ namespace NoQuarterTBC.Models
         [DisplayName("Raid ID")]
         [ForeignKey("raids")]
         public int RaidID { get; set; }
-        public virtual Raids raids { get; set; }
+        public virtual Raid raids { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace NoQuarterTBC.Models
     // PlayerProfessions Table
     // Linking Table for Players and Professions
     [Table("PlayerProfessions")]
-    public class PlayerProfessions
+    public class PlayerProfession
     {
         // Link to the Professions Table
         [Key, Required, Column(Order = 2)]
@@ -19,7 +19,7 @@ namespace NoQuarterTBC.Models
         [DisplayName("Profession ID")]
         [ForeignKey("professions")]
         public int ProfessionID { get; set; }
-        public virtual Professions professions { get; set; }
+        public virtual Profession professions { get; set; }
 
         // Link to the Players Table
         [Key, Required, Column(Order = 1)]
@@ -27,6 +27,6 @@ namespace NoQuarterTBC.Models
         [DisplayName("Player ID")]
         [ForeignKey("players")]
         public int PlayerID { get; set; }
-        public virtual Players players { get; set; }
+        public virtual Player players { get; set; }
     }
 }
