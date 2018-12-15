@@ -157,6 +157,7 @@
     <Compile Include="Controllers\Admin\GameRolesController.cs" />
     <Compile Include="Controllers\Admin\NotesController.cs" />
     <Compile Include="Controllers\Admin\PlayersController.cs" />
+    <Compile Include="Controllers\Admin\RolesController.cs" />
     <Compile Include="Controllers\Admin\SpecsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\NoQuarterTBCContext.cs" />
@@ -230,11 +231,6 @@
     <Content Include="Views\Admin\Notes\Details.cshtml" />
     <Content Include="Views\Admin\Notes\Edit.cshtml" />
     <Content Include="Views\Admin\Notes\Index.cshtml" />
-    <Content Include="Views\Admin\Players\Create.cshtml" />
-    <Content Include="Views\Admin\Players\Delete.cshtml" />
-    <Content Include="Views\Admin\Players\Details.cshtml" />
-    <Content Include="Views\Admin\Players\Edit.cshtml" />
-    <Content Include="Views\Admin\Players\Index.cshtml" />
     <Content Include="Views\Admin\GameRoles\Create.cshtml" />
     <Content Include="Views\Admin\GameRoles\Delete.cshtml" />
     <Content Include="Views\Admin\GameRoles\Details.cshtml" />
@@ -250,6 +246,16 @@
     <Content Include="Views\Admin\Specs\Details.cshtml" />
     <Content Include="Views\Admin\Specs\Edit.cshtml" />
     <Content Include="Views\Admin\Specs\Index.cshtml" />
+    <Content Include="Views\Admin\Roles\Create.cshtml" />
+    <Content Include="Views\Admin\Roles\Delete.cshtml" />
+    <Content Include="Views\Admin\Roles\Details.cshtml" />
+    <Content Include="Views\Admin\Roles\Edit.cshtml" />
+    <Content Include="Views\Admin\Roles\Index.cshtml" />
+    <Content Include="Views\Admin\Players\Create.cshtml" />
+    <Content Include="Views\Admin\Players\Delete.cshtml" />
+    <Content Include="Views\Admin\Players\Details.cshtml" />
+    <Content Include="Views\Admin\Players\Edit.cshtml" />
+    <Content Include="Views\Admin\Players\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

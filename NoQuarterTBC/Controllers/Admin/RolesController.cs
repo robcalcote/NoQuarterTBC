@@ -11,120 +11,107 @@ using NoQuarterTBC.Models;
 
 namespace NoQuarterTBC.Controllers.Admin
 {
-    public class PlayersController : Controller
+    public class RolesController : Controller
     {
         private NoQuarterTBCContext db = new NoQuarterTBCContext();
 
-        // GET: Players
+        // GET: Roles
         public ActionResult Index()
         {
-            var player = db.Player.Include(p => p.roles).Include(p => p.classes).Include(p => p.specs);
-            return View("~/Views/Admin/Players/Index.cshtml", player.ToList());
+            return View("~/Views/Admin/Roles/Index.cshtml", db.Role.ToList());
         }
 
-        // GET: Players/Details/5
+        // GET: Roles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player player = db.Player.Find(id);
-            if (player == null)
+            Role role = db.Role.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(player);
+            return View("~/Views/Admin/Roles/Details.cshtml", role);
         }
 
-        // GET: Players/Create
+        // GET: Roles/Create
         public ActionResult Create()
         {
-            ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName");
-            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName");
-            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName");
-            return View();
+            return View("~/Views/Admin/Roles/Create.cshtml");
         }
 
-        // POST: Players/Create
+        // POST: Roles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlayerID,PlayerName,RoleID,ClassID,SpecID,LoginPW")] Player player)
+        public ActionResult Create([Bind(Include = "RoleID,RoleName")] Role role)
         {
             if (ModelState.IsValid)
             {
-                db.Player.Add(player);
+                db.Role.Add(role);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", player.ClassID);
-            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
-            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Roles/Create.cshtml", role);
         }
 
-        // GET: Players/Edit/5
+        // GET: Roles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player player = db.Player.Find(id);
-            if (player == null)
+            Role role = db.Role.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", player.ClassID);
-            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
-            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Roles/Edit.cshtml", role);
         }
 
-        // POST: Players/Edit/5
+        // POST: Roles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlayerID,PlayerName,RoleID,ClassID,SpecID,LoginPW")] Player player)
+        public ActionResult Edit([Bind(Include = "RoleID,RoleName")] Role role)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(player).State = EntityState.Modified;
+                db.Entry(role).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", player.ClassID);
-            ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
-            ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Roles/Edit.cshtml", role);
         }
 
-        // GET: Players/Delete/5
+        // GET: Roles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player player = db.Player.Find(id);
-            if (player == null)
+            Role role = db.Role.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(player);
+            return View("~/Views/Admin/Roles/Delete.cshtml", role);
         }
 
-        // POST: Players/Delete/5
+        // POST: Roles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Player player = db.Player.Find(id);
-            db.Player.Remove(player);
+            Role role = db.Role.Find(id);
+            db.Role.Remove(role);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
