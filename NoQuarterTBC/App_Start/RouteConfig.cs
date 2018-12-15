@@ -13,6 +13,15 @@ namespace NoQuarterTBC
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // This route will be called if the user wants to navigate to the Admin page
+            // Viewing all the scaffolded models for editing site information
+            routes.MapRoute(
+                "Admin",
+                "Admin/{controller}/{action}/{id}",
+                new { controller = "Admin", action = "Index", id = "" }
+            );
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
