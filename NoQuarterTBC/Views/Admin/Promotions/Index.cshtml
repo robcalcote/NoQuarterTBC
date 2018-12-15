@@ -1,0 +1,51 @@
+﻿@model IEnumerable<NoQuarterTBC.Models.Promotion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.players.PlayerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewRankID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PromotionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OldRankID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.players.PlayerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewRankID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PromotionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OldRankID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PromotionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PromotionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PromotionID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model NoQuarterTBC.Models.BankContribution
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BankContribution</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.players.PlayerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.players.PlayerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContributionItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContributionItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContributionQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContributionQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContributionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContributionDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ContributionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

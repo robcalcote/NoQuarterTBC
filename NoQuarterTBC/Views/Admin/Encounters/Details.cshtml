@@ -1,0 +1,42 @@
+﻿@model NoQuarterTBC.Models.Encounter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Encounter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.bosses.BossName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bosses.BossName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BossFirstKill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BossFirstKill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BossKillTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BossKillTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EncounterFight }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

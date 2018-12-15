@@ -1,0 +1,26 @@
+﻿@model NoQuarterTBC.Models.Attunement
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Attunement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AttuneName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttuneName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AttuneID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

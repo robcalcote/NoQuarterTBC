@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NoQuarterTBC.Models.Boss>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.raids.RaidName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BossName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.raids.RaidName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BossName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BossID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BossID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BossID })
+        </td>
+    </tr>
+}
+
+</table>

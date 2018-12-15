@@ -1,0 +1,45 @@
+﻿@model IEnumerable<NoQuarterTBC.Models.Encounter>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.bosses.BossName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BossFirstKill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BossKillTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.bosses.BossName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BossFirstKill)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BossKillTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EncounterFight }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EncounterFight }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EncounterFight })
+        </td>
+    </tr>
+}
+
+</table>

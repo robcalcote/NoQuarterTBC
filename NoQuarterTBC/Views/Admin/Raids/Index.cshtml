@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NoQuarterTBC.Models.Raid>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RaidName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RaidReleaseDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RaidName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RaidReleaseDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RaidID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RaidID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RaidID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model NoQuarterTBC.Models.RaidInstance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RaidInstance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.raids.RaidName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.raids.RaidName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaidDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaidDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Progression)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Progression)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaidCleared)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaidCleared)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaidRunTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaidRunTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RaidInstanceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

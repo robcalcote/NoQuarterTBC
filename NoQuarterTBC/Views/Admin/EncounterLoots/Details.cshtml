@@ -1,0 +1,42 @@
+﻿@model NoQuarterTBC.Models.EncounterLoot
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EncounterLoot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.loots.LootName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loots.LootName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.players.PlayerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.players.PlayerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disenchanted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disenchanted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
