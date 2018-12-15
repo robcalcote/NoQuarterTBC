@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Controllers.Admin
         // GET: Players
         public ActionResult Index()
         {
-            var player = db.Player.Include(p => p.roles).Include(p => p.classes).Include(p => p.specs);
+            var player = db.Player.Include(p => p.classes).Include(p => p.roles).Include(p => p.specs);
             return View("~/Views/Admin/Players/Index.cshtml", player.ToList());
         }
 
@@ -34,7 +34,7 @@ namespace NoQuarterTBC.Controllers.Admin
             {
                 return HttpNotFound();
             }
-            return View(player);
+            return View("~/Views/Admin/Players/Details.cshtml", player);
         }
 
         // GET: Players/Create
@@ -43,7 +43,7 @@ namespace NoQuarterTBC.Controllers.Admin
             ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName");
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName");
             ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName");
-            return View();
+            return View("~/Views/Admin/Players/Create.cshtml");
         }
 
         // POST: Players/Create
@@ -63,7 +63,7 @@ namespace NoQuarterTBC.Controllers.Admin
             ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", player.ClassID);
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
             ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Players/Create.cshtml", player);
         }
 
         // GET: Players/Edit/5
@@ -81,7 +81,7 @@ namespace NoQuarterTBC.Controllers.Admin
             ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", player.ClassID);
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
             ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Players/Edit.cshtml", player);
         }
 
         // POST: Players/Edit/5
@@ -100,7 +100,7 @@ namespace NoQuarterTBC.Controllers.Admin
             ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", player.ClassID);
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
             ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Players/Edit.cshtml", player);
         }
 
         // GET: Players/Delete/5
@@ -115,7 +115,7 @@ namespace NoQuarterTBC.Controllers.Admin
             {
                 return HttpNotFound();
             }
-            return View(player);
+            return View("~/Views/Admin/Players/Delete.cshtml", player);
         }
 
         // POST: Players/Delete/5

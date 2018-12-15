@@ -11,7 +11,7 @@ namespace NoQuarterTBC.DAL
     {
         public NoQuarterTBCContext() : base("NoQuarterTBCContext")
         {
-
+            
         }
 
         // For each table in the Database - Please refer to LucidChart for the diagram.
