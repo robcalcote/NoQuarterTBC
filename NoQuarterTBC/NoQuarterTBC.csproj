@@ -153,6 +153,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminHomeController.cs" />
     <Compile Include="Controllers\Admin\AttunementsController.cs" />
     <Compile Include="Controllers\Admin\BankContributionsController.cs" />
     <Compile Include="Controllers\Admin\BossesController.cs" />
@@ -346,6 +347,7 @@
     <Content Include="Views\Admin\Loots\Details.cshtml" />
     <Content Include="Views\Admin\Loots\Edit.cshtml" />
     <Content Include="Views\Admin\Loots\Index.cshtml" />
+    <Content Include="Views\Admin\AdminHome\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

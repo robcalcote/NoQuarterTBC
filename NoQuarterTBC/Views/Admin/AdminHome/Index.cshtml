@@ -1,0 +1,165 @@
+﻿@model IEnumerable<NoQuarterTBC.Models.Player>
+
+@{
+    ViewBag.Title = "NQTBC - Admin";
+}
+
+<h2>Admin Home</h2>
+
+<table class="table">
+    <!-- Table Header -->
+    <tr>
+        <th>Table Name</th>
+        <th>Linking Table?</th>
+        <th>Primary Key</th>
+        <th>Contains Foreign Key?</th>
+        <th>Table Description</th>
+    </tr>
+    <!-- Table Rows -->
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Attunements", "../../Admin/Attunements/Index")</td>
+        <th><p></p></th>
+        <th><p>AttuneID</p></th>
+        <th><p></p></th>
+        <th><p>Contains all Attunements that a player can achieve.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Bank Contributions", "../../Admin/BankContributions/Index")</td>
+        <th><p></p></th>
+        <th><p>ContributionID</p></th>
+        <th><p>PlayerID</p></th>
+        <th><p>Contains all Guild Bank Contributions and their associated donor.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Bosses", "../../Admin/Bosses/Index")</td>
+        <th><p></p></th>
+        <th><p>BossID</p></th>
+        <th><p>RaidID</p></th>
+        <th><p>Contains all Bosses and the raid they are in.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Classes", "../../Admin/Classes/Index")</td>
+        <th><p></p></th>
+        <th><p>ClassID</p></th>
+        <th><p></p></th>
+        <th><p>Contains all Classes that a player can be.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Encounter Loots", "../../Admin/EncounterLoots/Index")</td>
+        <th><p>Encounters/Loots/Players</p></th>
+        <th><p>EncounterID, LootID, PlayerID</p></th>
+        <th><p>EncounterID, LootID, PlayerID</p></th>
+        <th><p>Contains all Loots that dropped in an encounter, and which player won it.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Encounters", "../../Admin/Encounters/Index")</td>
+        <th><p></p></th>
+        <th><p>EncounterID</p></th>
+        <th><p>BossID</p></th>
+        <th><p>Contains all Guild raid encounters and which boss the encounter was against.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Game Roles", "../../Admin/GameRoles/Index")</td>
+        <th><p></p></th>
+        <th><p>GameRoleID</p></th>
+        <th><p></p></th>
+        <th><p>Contains all Game roles a player can be.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Guild Ranks", "../../Admin/GuildRanks/Index")</td>
+        <th><p>RankID</p></th>
+        <th><p></p></th>
+        <th><p>Contains all Guild Ranks that  player can be.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Loots", "../../Admin/Loots/Index")</td>
+        <th><p></p></th>
+        <th><p>LootID</p></th>
+        <th><p>BossID</p></th>
+        <th><p>Contains all Loots that drop and from which bosses.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Notes", "../../Admin/Notes/Index")</td>
+        <th><p></p></th>
+        <th><p>NotesID</p></th>
+        <th><p>PlayerID</p></th>
+        <th><p>Contains all Notes and the player they are associated with.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Player Attunements", "../../Admin/Attunements/Index")</td>
+        <th><p>Attunements/Players</p></th>
+        <th><p>AttuneID, PlayerID</p></th>
+        <th><p>AttuneID, PlayerID</p></th>
+        <th><p>Contains attunements of players as they complete them.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Player Professions", "../../Admin/PlayerProfessions/Index")</td>
+        <th><p>Professions/Players</p></th>
+        <th><p>ProfessionID, PlayerID</p></th>
+        <th><p>ProfessionID, PlayerID</p></th>
+        <th><p>Contains all professions of specific players.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Players", "../../Admin/Players/Index")</td>
+        <th><p style="color:red">Central Table</p></th>
+        <th><p>PlayerID</p></th>
+        <th><p>RoleID, ClassID, SpecID</p></th>
+        <th><p>Contains all players that are a part of No Quarter TBC.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Privileges", "../../Admin/Privileges/Index")</td>
+        <th><p></p></th>
+        <th><p>RightsID</p></th>
+        <th><p>RoleID</p></th>
+        <th><p>Contains a Privilege description that a player/user can have on the site.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Professions", "../../Admin/Professions/Index")</td>
+        <th><p></p></th>
+        <th><p>ProfessionID</p></th>
+        <th><p></p></th>
+        <th><p>Contains all Professions that a player could choose.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Promotions", "../../Admin/Promotions/Index")</td>
+        <th><p>Players/GuildRanks</p></th>
+        <th><p>PromotionID</p></th>
+        <th><p>PlayerID, NewRankID, OldRankID</p></th>
+        <th><p>Contains guild rank promotions as players get them along with old rank.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Raid Attendance", "../../Admin/RaidAttendances/Index")</td>
+        <th><p>Players/RaidInstances</p></th>
+        <th><p>AttendanceID</p></th>
+        <th><p>PlayerID, RaidInstanceID</p></th>
+        <th><p>Contains records of when and which players attended NQ's specific raids.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Raid Instances", "../../Admin/RaidInstances/Index")</td>
+        <th><p></p></th>
+        <th><p>RaidInstanceID</p></th>
+        <th><p>RaidID</p></th>
+        <th><p>Contains specific raid instance information with time and progression or farm status.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Raids", "../../Admin/Raids/Index")</td>
+        <th><p>RaidInstances/Bosses</p></th>
+        <th><p>RaidID</p></th>
+        <th><p></p></th>
+        <th><p>Contains all the raids that are in The Burning Crusade and release dates.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Roles", "../../Admin/Roles/Index")</td>
+        <th><p>Players/Privileges</p></th>
+        <th><p>RoleID</p></th>
+        <th><p></p></th>
+        <th><p>Contains all Roles that a player can have on the site.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Specs", "../../Admin/Specs/Index")</td>
+        <th><p>Players/Classes/GameRoles</p></th>
+        <th><p>SpecID</p></th>
+        <th><p>GameRoleID, ClassID</p></th>
+        <th><p>Contains all specs that a class or player can select.</p></th>
+    </tr>
+</table>
