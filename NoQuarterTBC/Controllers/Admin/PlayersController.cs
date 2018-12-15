@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using NoQuarterTBC.DAL;
 using NoQuarterTBC.Models;
 
-namespace NoQuarterTBC.Controllers
+namespace NoQuarterTBC.Controllers.Admin
 {
     public class PlayersController : Controller
     {
@@ -18,8 +18,8 @@ namespace NoQuarterTBC.Controllers
         // GET: Players
         public ActionResult Index()
         {
-            var player = db.Player.Include(p => p.classes).Include(p => p.roles).Include(p => p.specs);
-            return View(player.ToList());
+            var player = db.Player.Include(p => p.roles).Include(p => p.specs);
+            return View("~/Views/Admin/Players/Index.cshtml", player.ToList());
         }
 
         // GET: Players/Details/5
@@ -34,16 +34,15 @@ namespace NoQuarterTBC.Controllers
             {
                 return HttpNotFound();
             }
-            return View(player);
+            return View("~/Views/Admin/Players/Details.cshtml", player);
         }
 
         // GET: Players/Create
         public ActionResult Create()
         {
-            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName");
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName");
             ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName");
-            return View();
+            return View("~/Views/Admin/Players/Create.cshtml");
         }
 
         // POST: Players/Create
@@ -60,10 +59,9 @@ namespace NoQuarterTBC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", player.AssayTypeID);
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
             ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Players/Create.cshtml", player);
         }
 
         // GET: Players/Edit/5
@@ -78,10 +76,9 @@ namespace NoQuarterTBC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", player.AssayTypeID);
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
             ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Players/Edit.cshtml", player);
         }
 
         // POST: Players/Edit/5
@@ -97,10 +94,9 @@ namespace NoQuarterTBC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AssayTypeID = new SelectList(db.Class, "ClassID", "ClassName", player.AssayTypeID);
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "RoleName", player.RoleID);
             ViewBag.SpecID = new SelectList(db.Spec, "SpecID", "SpecName", player.SpecID);
-            return View(player);
+            return View("~/Views/Admin/Players/Edit.cshtml", player);
         }
 
         // GET: Players/Delete/5
@@ -115,7 +111,7 @@ namespace NoQuarterTBC.Controllers
             {
                 return HttpNotFound();
             }
-            return View(player);
+            return View("~/Views/Admin/Players/Delete.cshtml", player);
         }
 
         // POST: Players/Delete/5

@@ -153,9 +153,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\ClassesController.cs" />
+    <Compile Include="Controllers\Admin\GameRolesController.cs" />
     <Compile Include="Controllers\Admin\NotesController.cs" />
+    <Compile Include="Controllers\Admin\PlayersController.cs" />
+    <Compile Include="Controllers\Admin\SpecsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="DAL\NoQuarterTBCContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,16 +225,31 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Notes\Create.cshtml" />
-    <Content Include="Views\Notes\Delete.cshtml" />
-    <Content Include="Views\Notes\Details.cshtml" />
-    <Content Include="Views\Notes\Edit.cshtml" />
-    <Content Include="Views\Notes\Index.cshtml" />
-    <Content Include="Views\Players\Create.cshtml" />
-    <Content Include="Views\Players\Delete.cshtml" />
-    <Content Include="Views\Players\Details.cshtml" />
-    <Content Include="Views\Players\Edit.cshtml" />
-    <Content Include="Views\Players\Index.cshtml" />
+    <Content Include="Views\Admin\Notes\Create.cshtml" />
+    <Content Include="Views\Admin\Notes\Delete.cshtml" />
+    <Content Include="Views\Admin\Notes\Details.cshtml" />
+    <Content Include="Views\Admin\Notes\Edit.cshtml" />
+    <Content Include="Views\Admin\Notes\Index.cshtml" />
+    <Content Include="Views\Admin\Players\Create.cshtml" />
+    <Content Include="Views\Admin\Players\Delete.cshtml" />
+    <Content Include="Views\Admin\Players\Details.cshtml" />
+    <Content Include="Views\Admin\Players\Edit.cshtml" />
+    <Content Include="Views\Admin\Players\Index.cshtml" />
+    <Content Include="Views\Admin\GameRoles\Create.cshtml" />
+    <Content Include="Views\Admin\GameRoles\Delete.cshtml" />
+    <Content Include="Views\Admin\GameRoles\Details.cshtml" />
+    <Content Include="Views\Admin\GameRoles\Edit.cshtml" />
+    <Content Include="Views\Admin\GameRoles\Index.cshtml" />
+    <Content Include="Views\Admin\Classes\Create.cshtml" />
+    <Content Include="Views\Admin\Classes\Delete.cshtml" />
+    <Content Include="Views\Admin\Classes\Details.cshtml" />
+    <Content Include="Views\Admin\Classes\Edit.cshtml" />
+    <Content Include="Views\Admin\Classes\Index.cshtml" />
+    <Content Include="Views\Admin\Specs\Create.cshtml" />
+    <Content Include="Views\Admin\Specs\Delete.cshtml" />
+    <Content Include="Views\Admin\Specs\Details.cshtml" />
+    <Content Include="Views\Admin\Specs\Edit.cshtml" />
+    <Content Include="Views\Admin\Specs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

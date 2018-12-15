@@ -11,112 +11,116 @@ using NoQuarterTBC.Models;
 
 namespace NoQuarterTBC.Controllers.Admin
 {
-    public class NotesController : Controller
+    public class SpecsController : Controller
     {
         private NoQuarterTBCContext db = new NoQuarterTBCContext();
 
-        // GET: Notes
+        // GET: Specs
         public ActionResult Index()
         {
-            var note = db.Note.Include(n => n.players);
-            return View("~/Views/Admin/Notes/Index.cshtml", note.ToList());
+            var spec = db.Spec.Include(s => s.classes).Include(s => s.gameroles);
+            return View("~/Views/Admin/Specs/Index.cshtml", spec.ToList());
         }
 
-        // GET: Notes/Details/5
+        // GET: Specs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note note = db.Note.Find(id);
-            if (note == null)
+            Spec spec = db.Spec.Find(id);
+            if (spec == null)
             {
                 return HttpNotFound();
             }
-            return View("~/Views/Admin/Notes/Details.cshtml", note);
+            return View("~/Views/Admin/Specs/Details.cshtml", spec);
         }
 
-        // GET: Notes/Create
+        // GET: Specs/Create
         public ActionResult Create()
         {
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName");
-            return View("~/Views/Admin/Notes/Create.cshtml");
+            ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName");
+            ViewBag.GameRoleID = new SelectList(db.GameRole, "GameRoleID", "GameRoleName");
+            return View("~/Views/Admin/Specs/Create.cshtml");
         }
 
-        // POST: Notes/Create
+        // POST: Specs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NotesID,PlayerID,NoteName,NoteDate,PrivateNote")] Note note)
+        public ActionResult Create([Bind(Include = "SpecID,SpecName,GameRoleID,ClassID")] Spec spec)
         {
             if (ModelState.IsValid)
             {
-                db.Note.Add(note);
+                db.Spec.Add(spec);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
-            return View("~/Views/Admin/Notes/Create.cshtml", note);
+            ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", spec.ClassID);
+            ViewBag.GameRoleID = new SelectList(db.GameRole, "GameRoleID", "GameRoleName", spec.GameRoleID);
+            return View("~/Views/Admin/Specs/Create.cshtml", spec);
         }
 
-        // GET: Notes/Edit/5
+        // GET: Specs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note note = db.Note.Find(id);
-            if (note == null)
+            Spec spec = db.Spec.Find(id);
+            if (spec == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
-            return View("~/Views/Admin/Notes/Edit.cshtml", note);
+            ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", spec.ClassID);
+            ViewBag.GameRoleID = new SelectList(db.GameRole, "GameRoleID", "GameRoleName", spec.GameRoleID);
+            return View("~/Views/Admin/Specs/Edit.cshtml", spec);
         }
 
-        // POST: Notes/Edit/5
+        // POST: Specs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NotesID,PlayerID,NoteName,NoteDate,PrivateNote")] Note note)
+        public ActionResult Edit([Bind(Include = "SpecID,SpecName,GameRoleID,ClassID")] Spec spec)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(note).State = EntityState.Modified;
+                db.Entry(spec).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
-            return View("~/Views/Admin/Notes/Edit.cshtml", note);
+            ViewBag.ClassID = new SelectList(db.Class, "ClassID", "ClassName", spec.ClassID);
+            ViewBag.GameRoleID = new SelectList(db.GameRole, "GameRoleID", "GameRoleName", spec.GameRoleID);
+            return View("~/Views/Admin/Specs/Edit.cshtml", spec);
         }
 
-        // GET: Notes/Delete/5
+        // GET: Specs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note note = db.Note.Find(id);
-            if (note == null)
+            Spec spec = db.Spec.Find(id);
+            if (spec == null)
             {
                 return HttpNotFound();
             }
-            return View("~/Views/Admin/Notes/Delete.cshtml", note);
+            return View("~/Views/Admin/Specs/Delete.cshtml", spec);
         }
 
-        // POST: Notes/Delete/5
+        // POST: Specs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Note note = db.Note.Find(id);
-            db.Note.Remove(note);
+            Spec spec = db.Spec.Find(id);
+            db.Spec.Remove(spec);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

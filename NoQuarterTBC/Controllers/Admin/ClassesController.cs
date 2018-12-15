@@ -11,112 +11,107 @@ using NoQuarterTBC.Models;
 
 namespace NoQuarterTBC.Controllers.Admin
 {
-    public class NotesController : Controller
+    public class ClassesController : Controller
     {
         private NoQuarterTBCContext db = new NoQuarterTBCContext();
 
-        // GET: Notes
+        // GET: Classes
         public ActionResult Index()
         {
-            var note = db.Note.Include(n => n.players);
-            return View("~/Views/Admin/Notes/Index.cshtml", note.ToList());
+            return View("~/Views/Admin/Classes/Index.cshtml", db.Class.ToList());
         }
 
-        // GET: Notes/Details/5
+        // GET: Classes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note note = db.Note.Find(id);
-            if (note == null)
+            Class @class = db.Class.Find(id);
+            if (@class == null)
             {
                 return HttpNotFound();
             }
-            return View("~/Views/Admin/Notes/Details.cshtml", note);
+            return View("~/Views/Admin/Classes/Details.cshtml", @class);
         }
 
-        // GET: Notes/Create
+        // GET: Classes/Create
         public ActionResult Create()
         {
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName");
-            return View("~/Views/Admin/Notes/Create.cshtml");
+            return View("~/Views/Admin/Classes/Create.cshtml");
         }
 
-        // POST: Notes/Create
+        // POST: Classes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NotesID,PlayerID,NoteName,NoteDate,PrivateNote")] Note note)
+        public ActionResult Create([Bind(Include = "ClassID,ClassName")] Class @class)
         {
             if (ModelState.IsValid)
             {
-                db.Note.Add(note);
+                db.Class.Add(@class);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
-            return View("~/Views/Admin/Notes/Create.cshtml", note);
+            return View("~/Views/Admin/Classes/Create.cshtml", @class);
         }
 
-        // GET: Notes/Edit/5
+        // GET: Classes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note note = db.Note.Find(id);
-            if (note == null)
+            Class @class = db.Class.Find(id);
+            if (@class == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
-            return View("~/Views/Admin/Notes/Edit.cshtml", note);
+            return View("~/Views/Admin/Classes/Edit.cshtml", @class);
         }
 
-        // POST: Notes/Edit/5
+        // POST: Classes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NotesID,PlayerID,NoteName,NoteDate,PrivateNote")] Note note)
+        public ActionResult Edit([Bind(Include = "ClassID,ClassName")] Class @class)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(note).State = EntityState.Modified;
+                db.Entry(@class).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", note.PlayerID);
-            return View("~/Views/Admin/Notes/Edit.cshtml", note);
+            return View("~/Views/Admin/Specs/Edit.cshtml", @class);
         }
 
-        // GET: Notes/Delete/5
+        // GET: Classes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Note note = db.Note.Find(id);
-            if (note == null)
+            Class @class = db.Class.Find(id);
+            if (@class == null)
             {
                 return HttpNotFound();
             }
-            return View("~/Views/Admin/Notes/Delete.cshtml", note);
+            return View("~/Views/Admin/Classes/Delete.cshtml", @class);
         }
 
-        // POST: Notes/Delete/5
+        // POST: Classes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Note note = db.Note.Find(id);
-            db.Note.Remove(note);
+            Class @class = db.Class.Find(id);
+            db.Class.Remove(@class);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

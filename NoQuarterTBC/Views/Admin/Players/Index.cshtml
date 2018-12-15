@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.classes.ClassName)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.roles.RoleName)
         </th>
         <th>
@@ -22,6 +19,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PlayerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssayTypeID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LoginPW)
@@ -32,9 +32,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.classes.ClassName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.roles.RoleName)
         </td>
         <td>
@@ -42,6 +39,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PlayerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssayTypeID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LoginPW)
