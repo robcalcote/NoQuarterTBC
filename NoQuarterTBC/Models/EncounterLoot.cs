@@ -17,24 +17,24 @@ namespace NoQuarterTBC.Models
         [Key, Required, Column(Order = 3)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Encounter ID")]
-        [ForeignKey("encounters")]
-        public int? EncounterID { get; set; }
+        //[ForeignKey("encounters")]
+        public int EncounterID { get; set; }
         public virtual Encounter encounters { get; set; }
 
         // Link to the Loots Table
         [Key, Required, Column(Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Loot ID")]
-        [ForeignKey("loots")]
-        public int? LootID { get; set; }
+        //[ForeignKey("loots")]
+        public int LootID { get; set; }
         public virtual Loot loots { get; set; }
 
         // Link to the Players Table
         [Key, Required, Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Player ID")]
-        [ForeignKey("players")]
-        public int? PlayerID { get; set; }
+        //[ForeignKey("players")]
+        public int PlayerID { get; set; }
         public virtual Player players { get; set; }
 
         [Required(ErrorMessage = "Loot Disenchanted is required.")]

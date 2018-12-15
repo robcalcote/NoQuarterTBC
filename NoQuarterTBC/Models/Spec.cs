@@ -29,15 +29,15 @@ namespace NoQuarterTBC.Models
         // Link to the GameRoles Table
         [Required(ErrorMessage = "Game Role ID is required.")]
         [DisplayName("Game Role ID")]
-        [ForeignKey("gameroles")]
-        public int? GameRoleID { get; set; }
+        //[ForeignKey("gameroles")]
+        public int GameRoleID { get; set; }
         public virtual GameRole gameroles { get; set; }
 
         // Link to the Classes Table
         [Required(ErrorMessage = "Class ID is required.")]
         [DisplayName("Class ID")]
-        [ForeignKey("classes")]
-        public int? ClassID { get; set; }
+        //[ForeignKey("classes")]
+        public int ClassID { get; set; }
         public virtual Class classes { get; set; }
     }
 }

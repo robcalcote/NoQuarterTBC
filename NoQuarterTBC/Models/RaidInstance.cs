@@ -24,8 +24,8 @@ namespace NoQuarterTBC.Models
         // Link to the Raids Table
         [Required(ErrorMessage = "A Raid ID is required.")]
         [DisplayName("Raid ID")]
-        [ForeignKey("raids")]
-        public int? RaidID { get; set; }
+        //[ForeignKey("raids")]
+        public int RaidID { get; set; }
         public virtual Raid raids { get; set; }
 
         [Required(ErrorMessage = "A Raid Date is required.")]

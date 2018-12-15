@@ -17,16 +17,16 @@ namespace NoQuarterTBC.Models
         [Key, Required, Column(Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Profession ID")]
-        [ForeignKey("professions")]
-        public int? ProfessionID { get; set; }
+        //[ForeignKey("professions")]
+        public int ProfessionID { get; set; }
         public virtual Profession professions { get; set; }
 
         // Link to the Players Table
         [Key, Required, Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Player ID")]
-        [ForeignKey("players")]
-        public int? PlayerID { get; set; }
+        //[ForeignKey("players")]
+        public int PlayerID { get; set; }
         public virtual Player players { get; set; }
     }
 }

@@ -20,15 +20,15 @@ namespace NoQuarterTBC.Models
         // Link to the Players Table
         [Required(ErrorMessage = "A Player ID is required.")]
         [DisplayName("Player ID")]
-        [ForeignKey("players")]
-        public int? PlayerID { get; set; }
+        //[ForeignKey("players")]
+        public int PlayerID { get; set; }
         public virtual Player players { get; set; }
 
         // Link to the GuildRanks Table - For New Rank
         [Required(ErrorMessage = "A New Rank ID is required.")]
         [DisplayName("New Rank ID")]
-        [ForeignKey("newguildranks")]
-        public int? NewRankID { get; set; }
+        //[ForeignKey("newguildranks")]
+        public int NewRankID { get; set; }
         public virtual GuildRank newguildranks { get; set; }
 
         [Required(ErrorMessage = "A Promotion Date is required.")]
@@ -38,8 +38,8 @@ namespace NoQuarterTBC.Models
         // Link to the GuildRanks Table - For Old Rank
         [Required(ErrorMessage = "An Old Rank ID is required.")]
         [DisplayName("Old Rank ID")]
-        [ForeignKey("oldguildranks")]
-        public int? OldRankID { get; set; }
+        //[ForeignKey("oldguildranks")]
+        public int OldRankID { get; set; }
         public virtual GuildRank oldguildranks { get; set; }
     }
 }

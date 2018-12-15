@@ -20,8 +20,8 @@ namespace NoQuarterTBC.Models
         // Link to the Players Table
         [Required(ErrorMessage = "A Player ID is required.")]
         [DisplayName("Player ID")]
-        [ForeignKey("players")]
-        public int? PlayerID { get; set; }
+        //[ForeignKey("players")]
+        public int PlayerID { get; set; }
         public virtual Player players { get; set; }
 
         [Required(ErrorMessage = "A Note is required.")]
