@@ -18,7 +18,7 @@ namespace NoQuarterTBC
             routes.MapRoute(
                 "Admin",
                 "Admin/{controller}/{action}/{id}",
-                new { controller = "Admin", action = "Index", id = "" }
+                new { controller = "AdminHome", action = "Index", id = UrlParameter.Optional }
             );
 
 
