@@ -42,6 +42,7 @@ namespace NoQuarterTBC.Controllers.Admin
         {
             ViewBag.LootID = new SelectList(db.Loot, "LootID", "LootName");
             ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName");
+            ViewBag.EncounterID = new SelectList(db.Encounter, "EncounterID", "EncounterID");
             return View("~/Views/Admin/EncounterLoots/Create.cshtml");
         }
 
@@ -61,6 +62,7 @@ namespace NoQuarterTBC.Controllers.Admin
 
             ViewBag.LootID = new SelectList(db.Loot, "LootID", "LootName", encounterLoot.LootID);
             ViewBag.PlayerID = new SelectList(db.Player, "PlayerID", "PlayerName", encounterLoot.PlayerID);
+            ViewBag.EncounterID = new SelectList(db.Encounter, "EncounterID", "EncounterID", encounterLoot.EncounterID);
             return View("~/Views/Admin/EncounterLoots/Create.cshtml", encounterLoot);
         }
 
