@@ -15,7 +15,7 @@ namespace NoQuarterTBC.Models
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("Encounter ID")]
-        public int EncounterFight { get; set; }
+        public int EncounterID { get; set; }
         #region Links
         // Link back to the RaidAttendance Table
         public virtual ICollection<EncounterLoot> encounterloots { get; set; }

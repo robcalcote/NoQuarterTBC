@@ -49,7 +49,7 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EncounterFight,BossID,BossFirstKill,BossKillTime")] Encounter encounter)
+        public ActionResult Create([Bind(Include = "EncounterID,BossID,BossFirstKill,BossKillTime")] Encounter encounter)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EncounterFight,BossID,BossFirstKill,BossKillTime")] Encounter encounter)
+        public ActionResult Edit([Bind(Include = "EncounterID,BossID,BossFirstKill,BossKillTime")] Encounter encounter)
         {
             if (ModelState.IsValid)
             {
