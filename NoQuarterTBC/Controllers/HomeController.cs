@@ -33,7 +33,7 @@ namespace NoQuarterTBC.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return RedirectToAction("Index", "Players");
+            return View();
         }
     }
 }
