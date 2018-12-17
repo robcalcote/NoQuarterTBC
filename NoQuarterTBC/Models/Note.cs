@@ -26,7 +26,7 @@ namespace NoQuarterTBC.Models
 
         [Required(ErrorMessage = "A Note is required.")]
         [DisplayName("Note")]
-        public string NoteName { get; set; }
+        public string NoteDesc { get; set; }
 
         [Required(ErrorMessage = "A Note Date is required.")]
         [DisplayName("Note Date")]

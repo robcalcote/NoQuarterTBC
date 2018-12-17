@@ -49,7 +49,7 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NotesID,PlayerID,NoteName,NoteDate,PrivateNote")] Note note)
+        public ActionResult Create([Bind(Include = "NotesID,PlayerID,NoteDesc,NoteDate,PrivateNote")] Note note)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NotesID,PlayerID,NoteName,NoteDate,PrivateNote")] Note note)
+        public ActionResult Edit([Bind(Include = "NotesID,PlayerID,NoteDesc,NoteDate,PrivateNote")] Note note)
         {
             if (ModelState.IsValid)
             {
