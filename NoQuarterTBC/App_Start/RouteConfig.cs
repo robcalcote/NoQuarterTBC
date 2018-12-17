@@ -16,17 +16,17 @@ namespace NoQuarterTBC
             // ADMIN ROUTE
             // URL/Admin will automatically take the user to Admin home page.
             routes.MapRoute(
-                "Admin",
-                "Admin/{controller}/{action}/{id}",
-                new { controller = "AdminHome", action = "Index", id = UrlParameter.Optional }
+                name:       "Admin",
+                url:        "Admin/{controller}/{action}/{id}",
+                defaults:   new { controller = "AdminHome", action = "Index", id = UrlParameter.Optional }
             );
 
             // DEFAULT ROUTE
             // URL will automatically take the user to the Site Landing page.
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name:       "Default",
+                url:        "{controller}/{action}/{id}",
+                defaults:   new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
