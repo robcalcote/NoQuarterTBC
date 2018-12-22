@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NoQuarterTBC.DAL;
+using NoQuarterTBC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,8 +19,16 @@ namespace NoQuarterTBC.Controllers
 {
     public class HomeController : Controller
     {
+        // Declare and/or instantiate variables
+        private NoQuarterTBCContext db = new NoQuarterTBCContext();
+        public static string sBannerMessage;
+        public static bool bLoggedIn;
+
         public ActionResult Index()
         {
+            // Displays a message if the user recently logged in or registered
+            ViewBag.SuccessfulLogin = sBannerMessage;
+
             return View();
         }
 
