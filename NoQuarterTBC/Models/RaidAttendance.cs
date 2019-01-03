@@ -14,7 +14,7 @@ namespace NoQuarterTBC.Models
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [DisplayName("Attendance ID")]
+        [DisplayName("Raid Attendance ID")]
         public int AttendanceID { get; set; }
 
         // Link to the Players Table
