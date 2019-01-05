@@ -33,10 +33,10 @@ namespace NoQuarterTBC.Models
 
         [Required(ErrorMessage = "Total Attendance Count is required.")]
         [DisplayName("Total Attendance Count")]
-        public float TotalAttendance { get; set; }
+        public double TotalAttendance { get; set; }
 
         [Required(ErrorMessage = "Recent Attendance is required.")]
         [DisplayName("Recent Attendance")]
-        public float RecentAttendance { get; set; }
+        public double RecentAttendance { get; set; }
     }
 }
