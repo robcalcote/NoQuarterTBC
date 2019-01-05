@@ -49,7 +49,7 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlayerID,AttunementID,DateAchieved")] PlayerAttunement playerAttunement)
+        public ActionResult Create([Bind(Include = "PlayerID,AttuneID,DateAchieved")] PlayerAttunement playerAttunement)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace NoQuarterTBC.Controllers.Admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlayerID,AttunementID,DateAchieved")] PlayerAttunement playerAttunement)
+        public ActionResult Edit([Bind(Include = "PlayerID,AttuneID,DateAchieved")] PlayerAttunement playerAttunement)
         {
             if (ModelState.IsValid)
             {

@@ -18,7 +18,7 @@ namespace NoQuarterTBC.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Attunement ID")]
         //[ForeignKey("attunements")]
-        public int AttunementID { get; set; }
+        public int AttuneID { get; set; }
         public virtual Attunement attunements { get; set; }
 
         // Link to the Players Table
