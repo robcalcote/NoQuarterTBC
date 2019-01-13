@@ -125,8 +125,8 @@
         <td>@Html.ActionLink("Promotions", "../../Admin/Promotions/Index")</td>
         <th><p>Players/GuildRanks</p></th>
         <th><p>PromotionID</p></th>
-        <th><p>PlayerID, NewRankID, OldRankID</p></th>
-        <th><p>Contains guild rank promotions as players get them along with old rank.</p></th>
+        <th><p>PlayerID, RankID</p></th>
+        <th><p>Contains guild rank promotions as players get them along with promotion date.</p></th>
     </tr>
     <tr style="font-style:oblique">
         <td>@Html.ActionLink("Raid Attendance", "../../Admin/RaidAttendances/Index")</td>
@@ -162,6 +162,20 @@
         <th><p>SpecID</p></th>
         <th><p>GameRoleID, ClassID</p></th>
         <th><p>Contains all specs that a class or player can select.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Recipes", "../../Admin/Recipes/Index")</td>
+        <th><p></p></th>
+        <th><p>RecipeID</p></th>
+        <th><p>ProfessionID</p></th>
+        <th><p>Contains all Recipes that a player can learn.</p></th>
+    </tr>
+    <tr style="font-style:oblique">
+        <td>@Html.ActionLink("Player Recipes", "../../Admin/PlayerRecipes/Index")</td>
+        <th><p>Recipes/Players</p></th>
+        <th><p>RecipeID, PlayerID</p></th>
+        <th><p>RecipeID, PlayerID</p></th>
+        <th><p>Contains all Recipes that all players have learned so far.</p></th>
     </tr>
     <!-- End of table Rows -->
 </table>

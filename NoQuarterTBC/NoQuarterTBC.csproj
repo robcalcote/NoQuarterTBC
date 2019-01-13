@@ -166,6 +166,7 @@
     <Compile Include="Controllers\Admin\NotesController.cs" />
     <Compile Include="Controllers\Admin\PlayerAttunementsController.cs" />
     <Compile Include="Controllers\Admin\PlayerProfessionsController.cs" />
+    <Compile Include="Controllers\Admin\PlayerRecipesController.cs" />
     <Compile Include="Controllers\Admin\PlayersController.cs" />
     <Compile Include="Controllers\Admin\PrivilegesController.cs" />
     <Compile Include="Controllers\Admin\ProfessionsController.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Controllers\Admin\RaidAttendancesController.cs" />
     <Compile Include="Controllers\Admin\RaidInstancesController.cs" />
     <Compile Include="Controllers\Admin\RaidsController.cs" />
+    <Compile Include="Controllers\Admin\RecipesController.cs" />
     <Compile Include="Controllers\Admin\RolesController.cs" />
     <Compile Include="Controllers\Admin\SpecsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -195,12 +197,14 @@
     <Compile Include="Models\PlayerAttunement.cs" />
     <Compile Include="Models\PlayerProfession.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\PlayerRecipe.cs" />
     <Compile Include="Models\Profession.cs" />
     <Compile Include="Models\Promotion.cs" />
     <Compile Include="Models\RaidAttendance.cs" />
     <Compile Include="Models\RaidInstance.cs" />
     <Compile Include="Models\Raid.cs" />
     <Compile Include="Models\Privilege.cs" />
+    <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Spec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -221,6 +225,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\NoQuarterTBC - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -351,6 +356,16 @@
     <Content Include="Views\Admin\Loots\Index.cshtml" />
     <Content Include="Views\Admin\AdminHome\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Admin\Recipes\Create.cshtml" />
+    <Content Include="Views\Admin\Recipes\Delete.cshtml" />
+    <Content Include="Views\Admin\Recipes\Details.cshtml" />
+    <Content Include="Views\Admin\Recipes\Edit.cshtml" />
+    <Content Include="Views\Admin\Recipes\Index.cshtml" />
+    <Content Include="Views\Admin\PlayerRecipes\Create.cshtml" />
+    <Content Include="Views\Admin\PlayerRecipes\Delete.cshtml" />
+    <Content Include="Views\Admin\PlayerRecipes\Details.cshtml" />
+    <Content Include="Views\Admin\PlayerRecipes\Edit.cshtml" />
+    <Content Include="Views\Admin\PlayerRecipes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

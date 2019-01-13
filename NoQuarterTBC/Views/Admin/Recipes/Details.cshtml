@@ -1,0 +1,34 @@
+﻿@model NoQuarterTBC.Models.Recipe
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Recipe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.professions.ProfessionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.professions.ProfessionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RecipeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

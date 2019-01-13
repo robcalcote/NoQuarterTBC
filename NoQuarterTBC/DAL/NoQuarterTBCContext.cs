@@ -38,5 +38,7 @@ namespace NoQuarterTBC.DAL
         public DbSet<Encounter> Encounter { get; set; }
         public DbSet<EncounterLoot> EncounterLoot { get; set; }
         public DbSet<Loot> Loot { get; set; }
+        public DbSet<Recipe> Recipe { get; set; }
+        public DbSet<PlayerRecipe> PlayerRecipe { get; set; }
     }
 }
